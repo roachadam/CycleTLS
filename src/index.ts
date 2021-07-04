@@ -77,7 +77,7 @@ class Golang extends EventEmitter {
       env: { WS_PORT: port.toString() },
       shell: true,
       windowsHide: true,
-      detached: true,
+      //detached: true,
     });
 
     child.stderr.on("data", (stderr) => {
@@ -225,9 +225,9 @@ const initCycleTLS = async (
               exec(
                 "taskkill /pid " + child.pid + " /T /F",
                 (error: any, stdout: any, stderr: any) => {
-                  if (error) {
-                    console.warn(error);
-                  }
+                //   if (error) {
+                //     console.warn(error);
+                //   }
                   instance.exit();
                   resolve(stdout ? stdout : stderr);
                 }
